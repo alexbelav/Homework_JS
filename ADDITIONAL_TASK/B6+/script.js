@@ -6,7 +6,7 @@ function buildWrapper(wrap) {
             return myRep.replace(/[&]/g, '&amp;').replace(/[<]/g, '&lt;').replace(/[>]/g, '&gt;').replace(/[']/g, '&apos;').replace(/["]/g, '&quot;');
         }
         let myArray = [];
-        Object.keys(stl).forEach((key) => {
+        Object.keys(stl).forEach((key) => { 
             myArray.push(key + '=' + "'" + myReg(stl[key]) + "'");
         });
         let myStl = myArray.join(' ');
