@@ -1,7 +1,7 @@
 "use strict"
 
 //Фамилия
-var lastName = prompt('Ваша Фамилия: ');
+var lastName = prompt('Ваша Фамилия: '); 
 while (lastName === null || lastName === '' || Number(lastName)) {
 	lastName = prompt('Введите Фамилию Правильно: ');
 };
