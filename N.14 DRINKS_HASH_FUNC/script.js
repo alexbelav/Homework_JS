@@ -5,7 +5,7 @@ function HashStorageFunc() {
     let privateStorage = {};
 
     self.addValue = function(key, value) {
-        privateStorage[key] = value;
+        privateStorage[key] = value; 
     };
 
     self.getValue = function(key) {  
