@@ -208,10 +208,6 @@ function valdiateDes(focusElem) {
     return errCount; 
 };
 
-
-
-
-
 myForm.dev.onblur=function() { validateDev(false); }
 myForm.name.onblur=function() { validateName(false); }
 myForm.url.onblur=function() { validateUrl(false); }
@@ -222,8 +218,6 @@ myForm.rubric.onchange=function() { validateRubric(false); }
 myForm.paid.onchange=function() { validatePaid(false); }
 myForm.comment.onchange=function() { validateComments(false); }
 myForm.comment.onchange=function() { valdiateDes(false); }
-
-
 
 function validAll(EO) {
     EO = EO || window.event;
@@ -239,8 +233,6 @@ function validAll(EO) {
         totalErrCount+=validatePaid( !totalErrCount );
         totalErrCount+=validateComments( !totalErrCount );
         totalErrCount+=valdiateDes( !totalErrCount );
-        
-
   
         if ( totalErrCount )
             EO.preventDefault(); // если ошибки были - отменяем отправку формы на сервер
@@ -248,9 +240,7 @@ function validAll(EO) {
     catch ( err ) {
         EO.preventDefault(); // что-то пошло не так - отменяем отправку формы на сервер
     }
-}
-
-
+};
 myForm.addEventListener('submit', validAll, false);
 
 
