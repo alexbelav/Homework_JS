@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DYN_VALID</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form class="form" method="post" action="http://fe.it-academy.by/TestForm.php" name="form" novalidate>
+            <div class="my-form">
+                <label class="my-form__label" for="dev">Разработчики:</label>
+                <input class="my-form__input" type="text" name="dev" id="dev">
+                <span class="empty-dev"></span>
+            </div>
+            <div class="my-form">
+                <label class="my-form__label" for="name">Название сайта:</label>
+                <input class="my-form__input" type="text" name="name" id="name">
+                <span class="empty-name"></span>
+            </div>
+            <div class="my-form">
+                <label class="my-form__label" for="url">URL сайта:</label>
+                <input class="my-form__input-url" type="email" name="url" id="url">
+                <span class="empty-url"></span>
+            </div>
+            <div class="my-form">
+                <label class="my-form__label" for="date">Дата запуска сайта:</label>
+                <input class="my-form__input-date" min="2022-10-20" type="date" name="date" id="date" required>
+                <span class="empty-date"></span>
+            </div>
+            <div class="my-form">
+                <label class="my-form__label" for="visitors">Посетителей в сутки:</label>
+                <input class="my-form__input-visitors" type="text" name="visitors" id="visitors">
+                <span class="empty-visitors"></span>
+            </div>
+            <div class="my-form">
+                <label class="my-form__label" for="email">E-mail для связи:</label>
+                <input class="my-form__input-email" type="text" name="email" id="email">
+                <span class="empty-email"></span>
+            </div>
+            <div class="my-form">
+                <label class="my-form__label empty" for="rubric">Рубрика каталога:</label>
+                <select class="my-form__input-rubric" name="rubric" id="rubric">
+                    <option value="0">Выберите рубрику</option>
+                    <option value="health-1">Здоровье</option>
+                    <option value="comfort-2">Домашний уют</option>
+                    <option value="technique-3">Бытовая техника</option>
+                </select>
+                <span class="empty-rubric"></span>
+            </div>
+            <div class="my-form">
+                <label class="my-form__label label-radio" for="paid-1">Размещение:</label>
+                <div class = "my-form__input-radio">
+                    <input class="my-form__input-radio" type="radio" name="paid" id="paid-1" value="free" required><label for = 'paid-1'>бесплатное</label>
+                    <input class="my-form__input-radio" type="radio" name="paid" id="paid-2" value="pay" required><label for = 'paid-2'>платное</lab>
+                    <input class="my-form__input-radio" type="radio" name="paid" id="paid-3" value="vip" required><label for = 'paid-3'>VIP</label>
+                    <span class="empty-paid"></span>
+                </div>
+            </div>
+            <div class="my-form">
+                <label class="my-form__label" for="comment">Разрешить отзывы:</label>
+                <div>
+                    <input class="my-form__input" type="checkbox" name="comment" id="comment">
+                    <span class="empty-comment"></span>
+                </div>
+            </div>
+            <div class="my-form">
+                <label class="my-form__label" for="description">Описание сайта:</label>
+            </div>
+            <div>
+                <textarea class="my-form__input-textarea input-description empty" type="textarea" name="description" id="description"></textarea>
+                <span class="empty-description"></span>
+            </div>
+            <div class="my-from__submit">
+                <input class="btn input-btn" type="submit" value="Опубликовать">
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+.my-form {
+    display: flex;
+    align-items: center;
+    max-width: 100em;
+    margin-bottom: 0.55rem;
+}
+.my-form__label {
+    flex: 0 1 10em;
+}
+.my-form__input {
+    flex: 0 1 30em;
+}
+input, textarea{
+    border: 1px solid black;
+}
+.input-radio {
+    display: flex;
+    align-items: center;
+}
+.radio-name:not(:last-child) {
+    margin-right: 0.7em;
+}
+.my-form__input-radio:not(:last-child)  {
+    margin-right: 0.3em;
+}
+.my-form__input-textarea {
+    width: 42em;
+    height: 3em;
+    margin-bottom: 0.55rem;
+}
+.my-form__input-url {
+    width: 18em;
+}
+.my-form__input-date, .my-form__input-visitors {
+    width: 10em;
+}
+.my-form__input-email, .my-form__input-rubric {
+    width: 13em;
+}
+
