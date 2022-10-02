@@ -64,7 +64,7 @@ function validateUrl(focusElem) {
     let urlErr = document.querySelector('.empty-url');
     if (urlValue !== '') {
         urlErr.innerHTML = '';
-    } else if (!URL_REGEXP.test(urlValue)) {
+    } if (!URL_REGEXP.test(urlValue)) {
         urlErr.innerHTML = 'Введите URL сайта';
         myStyle(urlErr);
         errCount++;
@@ -208,6 +208,10 @@ function valdiateDes(focusElem) {
     return errCount; 
 };
 
+
+
+
+
 myForm.dev.onblur=function() { validateDev(false); }
 myForm.name.onblur=function() { validateName(false); }
 myForm.url.onblur=function() { validateUrl(false); }
@@ -215,9 +219,14 @@ myForm.date.onblur=function() { validateDate(false); }
 myForm.visitors.onblur=function() { validateVisitors(false); }
 myForm.email.onblur=function() { validateEmail(false); }
 myForm.rubric.onchange=function() { validateRubric(false); }
-myForm.paid.onchange=function() { validatePaid(false); }
+myForm.paid[0].onchange=function() { validatePaid(false); }
+myForm.paid[1].onchange=function() { validatePaid(false); }
+myForm.paid[2].onchange=function() { validatePaid(false); }
 myForm.comment.onchange=function() { validateComments(false); }
-myForm.comment.onchange=function() { valdiateDes(false); }
+myForm.description.onblur=function() { valdiateDes(false); }
+
+
+
 
 function validAll(EO) {
     EO = EO || window.event;
@@ -233,6 +242,8 @@ function validAll(EO) {
         totalErrCount+=validatePaid( !totalErrCount );
         totalErrCount+=validateComments( !totalErrCount );
         totalErrCount+=valdiateDes( !totalErrCount );
+        
+
   
         if ( totalErrCount )
             EO.preventDefault(); // если ошибки были - отменяем отправку формы на сервер
@@ -240,7 +251,9 @@ function validAll(EO) {
     catch ( err ) {
         EO.preventDefault(); // что-то пошло не так - отменяем отправку формы на сервер
     }
-};
+}
+
+
 myForm.addEventListener('submit', validAll, false);
 
 
