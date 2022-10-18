@@ -1,1 +1,91 @@
+.wrapper {
+    margin: 2em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.mylabel {
+    font-size: 2em;
+    color: rgb(152, 10, 10);
+}
+
+.mybutton {
+    padding: 1em 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #1d681f;
+    border: none;
+    border-radius: 0.6em;
+    box-shadow: 0 9px rgb(190, 182, 182);
+}
+.mybutton:hover {
+    background-color: #235026
+}
+
+.mybutton:active {
+  background-color: #235026;
+  box-shadow: 0 0.1em #666;
+  transform: translateY(0.1em);
+}
+
+.myinput {
+    width: 15%;
+    height: 2em;
+    border-radius: 0.5em;
+}
+
+.err {
+    font-size: 1.2em;
+}
+
+
+._my-clock {
+    position: relative;
+    background-color: rgb(210, 182, 55);
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 2em;
+  }
+  
+._clock-numbers {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(47, 114, 75);
+    border-radius: 50%;
+}
+
+._hour-hand {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10em;
+    transform-origin: center 90%;
+}
+
+._minutes-hand {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10em;
+    transform-origin: center 90%;
+}
+
+._second-hand {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10em;
+    transform-origin: center 90%;
+}
+
+._clock-date {
+    position: absolute;
+    text-align: center;
+}
+
 
