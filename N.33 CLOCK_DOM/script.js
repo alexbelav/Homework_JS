@@ -1,5 +1,5 @@
 'use strict';
-//Образуем разрешение на ввод в поле инпут
+//Разрешаем вводить определенные клавиши
 document.querySelector('.myinput').addEventListener('keydown', function(event) {
 	//Разрешаем: событие 'click' на enter
     if (event.keyCode == 13) { 
@@ -63,8 +63,8 @@ function createClockNum() {
     const myNumberDistance = myRadius * 0.8; //Расстояние от цента часов до цента круга с числом
     for (let i = 1; i <= 12; i++) {
         let clockNum = document.createElement('div');
-        const clockNumSize = myClock.offsetWidth/9; //Размер круга с цифрой
-        const clockNumFontSize = myClock.offsetWidth/13; //Размер шрифта цифры
+        const clockNumSize = myRadius/4; //Размер круга с цифрой
+        const clockNumFontSize = myRadius/7; //Размер шрифта цифры
         const clockHourAngle = Math.PI*2/12*i;
         const clockNumX = centerX + myNumberDistance*Math.sin(clockHourAngle);
         const clockNumY = centerY - myNumberDistance*Math.cos(clockHourAngle);
@@ -90,7 +90,7 @@ function createHourMinSec() {
     let clockHourHand = document.createElement('div'); //Стрелка часов
     let clockMinHand = document.createElement('div'); //Стрелка минут
     let clockSecHand = document.createElement('div'); //Стрелка секунд
-    let clockDateNumbers = document.createElement('div')//Время цифрами
+    let clockDateNumbers = document.createElement('div');//Время цифрами
 
     const centerX = myRadius; //Центр X 
     const centerY = myRadius; //Центр Y
@@ -106,8 +106,8 @@ function createHourMinSec() {
     //Позиционируем часовую стрелку
     const hourX = clockHourHand.offsetWidth / 2; // Позиция стрелки часов по X
     const hourY = clockHourHand.offsetHeight * 0.9; // Позиция стрелки часов по Y
-    clockHourHand.style.left = (centerX - hourX) + 'px';
-    clockHourHand.style.top = (centerY - hourY) + 'px';
+    clockHourHand.style.left = centerX - hourX + 'px';
+    clockHourHand.style.top = centerY - hourY + 'px';
 
     //Создаем минутную стрелку
     const minHandWidth = myRadius / 40; //Ширина стрелки минут
@@ -157,7 +157,7 @@ updateClock();
 //Обновляем время
 function updateClock() {
     const timeDate = new Date();
-
+    console.log(timeDate);
     const hours = timeDate.getHours();
     const min = timeDate.getMinutes();
     const sec = timeDate.getSeconds();
@@ -174,6 +174,5 @@ function updateClock() {
     
     setTimeout(updateClock, 1010 - ms);
 };
-
 
 
