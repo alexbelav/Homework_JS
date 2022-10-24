@@ -116,18 +116,17 @@ function createClockCanvas() {
     }
     //Обновляем время
     const timeDate = new Date();
+
     console.log(timeDate);
+
     const hours = timeDate.getHours();
     const min = timeDate.getMinutes();
     const sec = timeDate.getSeconds();
     const ms = timeDate.getMilliseconds();
 
-    const hoursAngle = hours/12*360 + min/60;
-    const minAngle = min/60*360 + sec/60;
-    const secAngle = sec/60*360;
-    // const hoursAngle = (timeDate.getHours()%12)/12*360+timeDate.getMinutes()/60*30; //Угол часовой стрелки
-    // const minAngle = 360/60*(min + sec/60); //Угол минутной стрелки
-    // const secAngle = 360/60*sec; //Угол секундной стрелки
+    const hoursAngle = hours/12*360 + min/60*30; //Угол часовой стрелки
+    const minAngle = min/60*360 + sec/60; //Угол минутной стрелки
+    const secAngle = sec/60*360; //Угол секундной стрелки
 
     const secHandHeight = myRadius * 0.7; //Длина стрелки секунд
     const minHandHeight = myRadius * 0.7; //Длина стрелки минут
@@ -136,6 +135,13 @@ function createClockCanvas() {
     const secHandWidth = myRadius / 80; //Ширина стрелки секунд
     const minHandWidth = myRadius / 40; //Ширина стрелки минут
     const hourHandWidth = myRadius / 20; //Ширина стрелки часов
+
+    //Создаем время цифрами
+    myContext.beginPath();
+    myContext.fillStyle = 'circleNumTextColor';
+    myContext.fillText(timeDate.toLocaleTimeString(), centerX - myWidth/7, centerY - myHeight/5);
+
+
 
     //Создаем стрелку часовую
     myContext.beginPath();
