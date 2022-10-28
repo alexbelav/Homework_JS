@@ -50,7 +50,7 @@ let ballH = {
         this.posX = WIDTH_GAME/2 - WIDTH_BALL/2;
         this.posY = HEIGHT_GAME/2 - HEIGHT_BALL/2;
         this.speedX = 4;
-        this.speedY = 5;
+        this.speedY = -4;
     },
 };
 
