@@ -32,7 +32,7 @@ let gameH = {
         gameH.setAttribute('width', this.width);
         gameH.setAttribute('height', this.height);
         gameH.setAttribute('opacity', 0.5);
-        mySvg.appendChild(gameH);
+        mySvg.appendChild(gameH); 
     },
 };
 gameH.update();
