@@ -114,6 +114,39 @@ let gameStatus = 0;
 // 1 - игра идет, мяч летает
 // 2 - зафиксирован гол, мяч застыл у стены
 
+function startPlay() {
+    //Движение ракеток при нажатии
+    
+        document.onkeydown = function(event) {
+            //Shift - ввер
+            if (event.keyCode === 16) {
+                player1H.speedY = -10;
+            }
+            //Ctrl - вниз 
+            if (event.keyCode === 17) {
+                player1H.speedY = 10;
+            }
+            //PgUp - вверх
+            if (event.keyCode === 38) {
+                player2H.speedY = -10;
+            }
+            //PgDn - вниз
+            if (event.keyCode === 40) {
+                player2H.speedY = 10;
+            }
+        } 
+    
+        //Обнуляем движение ракеток
+        document.onkeyup = function(event) {
+            if (event.keyCode === 16 || event.keyCode === 17) {
+                player1H.speedY = 0;
+            }
+            if (event.keyCode === 38 || event.keyCode === 40) {
+                player2H.speedY = 0;
+            }
+        };
+};
+
 //Запускаем мяч
 function startGame() { 
     if (gameStatus === 0 || gameStatus === 2) {
@@ -123,6 +156,7 @@ function startGame() {
         player1H.posY = HEIGHT_GAME/2 - HEIGHT_BRACKET/2;
         player1H.posX = 0;
         gameStatus = 1;
+        startPlay();
     }
 };
 
@@ -169,6 +203,7 @@ function tick() {
         //Прибавляем одно очко игроку 1
         player1H.score++;
         gameStatus = 2;
+        document.onkeydown = null;
         player1H.updateScore();
     }
 
@@ -183,6 +218,7 @@ function tick() {
         //Прибавляем одно очко игроку 2
         player2H.score++;
         gameStatus = 2;
+        document.onkeydown = null;
         player2H.updateScore(); 
     }
 
@@ -227,41 +263,6 @@ function tick() {
         ballH.posY = 0;
     }
 
-    //Движение ракеток при нажатии
-    if (gameStatus === 1) {
-        document.onkeydown = function(event) {
-            //Shift - ввер
-            if (event.keyCode === 16) {
-                player1H.speedY = -10;
-            }
-            //Ctrl - вниз 
-            if (event.keyCode === 17) {
-                player1H.speedY = 10;
-            }
-            //PgUp - вверх
-            if (event.keyCode === 38) {
-                player2H.speedY = -10;
-            }
-            //PgDn - вниз
-            if (event.keyCode === 40) {
-                player2H.speedY = 10;
-            }
-        } 
-    } else {
-        gameStatus = 2;
-        document.onkeydown = null;
-    }
-    
-        //Обнуляем движение ракеток
-        document.onkeyup = function(event) {
-            if (event.keyCode === 16 || event.keyCode === 17) {
-                player1H.speedY = 0;
-            }
-            if (event.keyCode === 38 || event.keyCode === 40) {
-                player2H.speedY = 0;
-            }
-        };
-
     requestAnimationFrame(tick);
     ballH.update();
     player1H.update();
@@ -272,4 +273,3 @@ function tick() {
 //Выстраиваем игровое поле
 tick();
 gameH.update();
-
